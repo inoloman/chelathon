@@ -81,7 +81,6 @@ function accept(response, origin){
 
 // Función que rechaza la oferta mencionada
 function denegate(state){
-    console.dir(state);
     info_accept.close();
     transition(state.deltaLat, state.deltaLng, state.origin, state.route
         , state.step);
