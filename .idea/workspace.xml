@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cbb5ca6-2e2a-460f-b14d-28885b8f8522" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/rechazo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rechazo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/map.js" afterPath="$PROJECT_DIR$/js/map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/now.html" afterPath="$PROJECT_DIR$/now.html" />
     </list>
     <ignored path="chelaton.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,41 +37,21 @@
       <file leaf-file-name="now.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/now.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.333333">
-              <caret line="14" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="7" />
+            <state vertical-scroll-proportion="-11.851851">
+              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="map.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.37597913">
+              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
               <folding>
-                <marker date="1456667399393" expanded="true" signature="4962:4977" placeholder="..." />
+                <marker date="1456669120829" expanded="true" signature="5139:5154" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rechazo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rechazo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5185184">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rechazo.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/rechazo.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8988764">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,11 +81,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/now.html" />
         <option value="$PROJECT_DIR$/css/now.css" />
-        <option value="$PROJECT_DIR$/js/map.js" />
         <option value="$PROJECT_DIR$/rechazo.html" />
         <option value="$PROJECT_DIR$/css/rechazo.css" />
+        <option value="$PROJECT_DIR$/now.html" />
+        <option value="$PROJECT_DIR$/js/map.js" />
       </list>
     </option>
   </component>
@@ -259,7 +237,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="30" width="1368" height="739" extended-state="7" />
+    <frame x="-1" y="30" width="1368" height="739" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24907063" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -304,24 +282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-          <folding>
-            <marker date="1456667399393" expanded="true" signature="4962:4977" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/now.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.333333">
-          <caret line="14" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/now.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.0">
@@ -340,9 +300,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/rechazo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8988764">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        <state vertical-scroll-proportion="-9.185185">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/now.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.851851">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37597913">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <marker date="1456669120829" expanded="true" signature="5139:5154" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

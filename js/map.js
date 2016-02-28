@@ -1,7 +1,13 @@
+var promotion_ok = false;
 var directionsDisplay;
 var directionsService;
 var timesService;
 var map;
+var firebaseRef = new Firebase('https://second-oportunity.firebaseio.com');
+
+firebaseRef.on('order_accepted', function(dataSnapshot){
+    promotion_ok = dataSnapshot.val();
+});
 
 function calculate(orig, dest, moving){
     directionsService.route({
@@ -87,7 +93,6 @@ function denegate(state){
 }
 
 // Función que hace la transición sin ser brusco
-var promotion_ok = false;
 var promotion_position = {lat: 19.4306688, lng: -99.2056889};
 var info_accept;
 
