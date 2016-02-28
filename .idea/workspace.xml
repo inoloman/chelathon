@@ -47,10 +47,10 @@
       <file leaf-file-name="map.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24804178">
-              <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.7180157">
+              <caret line="147" column="46" selection-start-line="147" selection-start-column="46" selection-end-line="147" selection-end-column="46" />
               <folding>
-                <marker date="1456667046793" expanded="true" signature="4977:4992" placeholder="..." />
+                <marker date="1456667351369" expanded="true" signature="4986:5001" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -298,10 +298,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24804178">
-          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.7180157">
+          <caret line="147" column="46" selection-start-line="147" selection-start-column="46" selection-end-line="147" selection-end-column="46" />
           <folding>
-            <marker date="1456667046793" expanded="true" signature="4977:4992" placeholder="..." />
+            <marker date="1456667351369" expanded="true" signature="4986:5001" placeholder="..." />
           </folding>
         </state>
       </provider>

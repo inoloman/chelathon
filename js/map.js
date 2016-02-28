@@ -81,9 +81,10 @@ function accept(response, origin){
 
 // Función que rechaza la oferta mencionada
 function denegate(state){
+    console.dir(state);
     info_accept.close();
-    transition(state.deltaLat, state.deltaLat, state.deltaLng, state.origin
-        , state.route, state.step)
+    transition(state.deltaLat, state.deltaLng, state.origin, state.route
+        , state.step);
 }
 
 // Función que hace la transición sin ser brusco
@@ -144,6 +145,7 @@ function calculateTime(orig, dest, marker_origin, state){
                 accept(response, marker_origin);
             });
             content.find('a').eq(1).click(function(){
+                promotion_marker.setMap(null);
                 denegate(state);
             });
         } else {
