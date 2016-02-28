@@ -71,13 +71,19 @@ function moveMarker(origin, route, step){
 }
 
 // Función que acepta la oferta mencionda
-function accept(){
-    info_accept.close();
+function accept(response, origin){
+    // Cambiamos el destino
+    modelo_location = promotion_position;
+    denegate();
+    directionsDisplay.setDirections(response);
+    moveMarker(origin, response.routes[0].overview_path, 0);
 }
 
 // Función que rechaza la oferta mencionada
-function denegate(){
+function denegate(state){
     info_accept.close();
+    transition(state.deltaLat, state.deltaLat, state.deltaLng, state.origin
+        , state.route, state.step)
 }
 
 // Función que hace la transición sin ser brusco
@@ -87,9 +93,11 @@ var info_accept;
 
 function transition(deltaLat, deltaLng, origin, route, step){
     if (promotion_ok){
+        var state = {deltaLat: deltaLat,
+            deltaLng: deltaLng, origin: origin, route: route, step: step};
         setTimeout(function(){
             calculateTime({lat: origin.getPosition().lat(),
-                lng: origin.getPosition().lng()}, promotion_position);
+                lng: origin.getPosition().lng()}, promotion_position, origin, state);
         }, 1000);
         return;
     }
@@ -102,18 +110,14 @@ function transition(deltaLat, deltaLng, origin, route, step){
             transition(deltaLat, deltaLng, origin, route, step);
         }, delay);
     } else {
-        if (step != 5){
-            moveMarker(origin, route, step+1);
-        } else {
-            promotion_ok = true;
-            moveMarker(origin, route, step+1);
-        }
+        moveMarker(origin, route, step+1);
     }
 }
 
 
 // Función que calcula el tiempo aproximado entre un punto y otro
-function calculateTime(orig, dest){
+function calculateTime(orig, dest, marker_origin, state){
+    promotion_ok = false;
     var origen = new google.maps.LatLng(orig);
     var destino = new google.maps.LatLng(dest);
     timesService.route({
@@ -126,18 +130,24 @@ function calculateTime(orig, dest){
         if (status === google.maps.DirectionsStatus.OK) {
             var content_string = '<div id="content">' +
                 '<h3>Se acepto la oferta!</h3>' +
-                '<p>Se ha aceptado la oferta tiempo aproximado de entrega:' +
+                '<p>Se ha aceptado la oferta tiempo aproximado de entrega: ' +
                 response.routes[0].legs[0].duration.text + '</p>' +
-                '<a class="btn btn-default" href="#" role="button" style="margin: 0 50px;" onclick="accept()">Aceptar</a>' +
+                '<a class="btn btn-default" href="#" role="button" style="margin: 0 50px;">Aceptar</a>' +
                 '<a class="btn btn-default" href="#" role="button" onclick="denegate()">Rechazar</a>' +
                 '</div>';
             info_accept = new google.maps.InfoWindow({content: content_string});
             var promotion_marker = new google.maps.Marker({position: promotion_position, map: map,
                 title: 'Nueva Oferta'});
             info_accept.open(map, promotion_marker);
-            //directionsDisplay.setDirections(response);
+            var content = $('#content');
+            content.find('a').eq(0).click(function(){
+                accept(response, marker_origin);
+            });
+            content.find('a').eq(1).click(function(){
+                denegate(state);
+            });
         } else {
-            console.dir('No se pudo calcular pero no se por que');
+            console.dir('Hubo un error');
         }
     });
 }
