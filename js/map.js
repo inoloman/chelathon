@@ -1,8 +1,12 @@
+var directionsDisplay;
+var directionsService;
+var map;
+
 function calculate(orig, dest){
     directionsService.route({
-        origin: orig,
-        destination: dest,
-        travelMode: google.maps.TravelMode.BICYCLING
+        origin: new google.maps.LatLng(orig),
+        destination: new google.maps.LatLng(dest),
+        travelMode: google.maps.TravelMode.DRIVING
     }, function(response, status) {
         // Generamos la ruta de la dirección y la marcamos en el mapa
         if (status === google.maps.DirectionsStatus.OK) {
@@ -16,8 +20,7 @@ function calculate(orig, dest){
 function initMap() {
     var now_origin = {lat: 19.4329379, lng: -99.2050056};
     var modelo_location = {lat: 19.4282786, lng: -99.2087178};
-    var directionsService = new google.maps.DirectionsService;
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 19.4306579, lng: -99.2059422},
         zoom: 16,
         styles: [{
@@ -30,22 +33,10 @@ function initMap() {
         disableDoubleClickZoom: true
     });
 
-    var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+    directionsService = new google.maps.DirectionsService();
 
-    var stepDisplay = new google.maps.InfoWindow;
+    directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 
-    calculateAndDisplayRoute(
-        directionsDisplay, directionsService, markerArray, stepDisplay, map);
+    calculate(now_origin, modelo_location);
 
-    var marker = new google.maps.Marker({
-        position: now_origin,
-        map: map,
-        title: 'Motor Now'
-    });
-
-    var modelo_marker = new google.maps.Marker({
-        position: modelo_location,
-        map: map,
-        title: 'Modelorama'
-    });
 }
