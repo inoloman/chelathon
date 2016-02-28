@@ -5,8 +5,9 @@ var timesService;
 var map;
 var firebaseRef = new Firebase('https://second-oportunity.firebaseio.com');
 
-firebaseRef.on('order_accepted', function(dataSnapshot){
-    promotion_ok = dataSnapshot.val();
+// Verificamos si llega alguna promocion aceptada
+firebaseRef.on('value', function(dataSnapshot){
+    promotion_ok = dataSnapshot.val().order_accepted;
 });
 
 function calculate(orig, dest, moving){
@@ -34,7 +35,7 @@ function calculate(orig, dest, moving){
                 moveMarker(now_marker, response.routes[0].overview_path, 0);
             }
         } else {
-            window.alert('No se pudo calcular la dirección' + status);
+            console.dir('No se pudo calcular la dirección' + status);
         }
     });
 }
@@ -80,16 +81,16 @@ function moveMarker(origin, route, step){
 function accept(response, origin){
     // Cambiamos el destino
     modelo_location = promotion_position;
-    denegate();
     directionsDisplay.setDirections(response);
+    info_accept.close();
     moveMarker(origin, response.routes[0].overview_path, 0);
 }
 
 // Función que rechaza la oferta mencionada
 function denegate(state){
-    info_accept.close();
     transition(state.deltaLat, state.deltaLng, state.origin, state.route
         , state.step);
+    info_accept.close();
 }
 
 // Función que hace la transición sin ser brusco
@@ -122,8 +123,9 @@ function transition(deltaLat, deltaLng, origin, route, step){
 
 // Función que calcula el tiempo aproximado entre un punto y otro
 function calculateTime(orig, dest, marker_origin, state){
-    promotion_ok = false;
-    firebaseRef.push({'order_accepted': false});
+    // Si nos llega la promoción la reiniciamos como falsa
+    firebaseRef.update({'order_accepted': false});
+    // E inicializamos el origen y el destino en LatLang de google
     var origen = new google.maps.LatLng(orig);
     var destino = new google.maps.LatLng(dest);
     timesService.route({
