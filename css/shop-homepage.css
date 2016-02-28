@@ -52,3 +52,20 @@ body {
 footer {
     margin: 50px 0;
 }
+
+#alert{
+    background-color: #242934;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    color: #fff;
+}
+
+#alert .btn{
+    float: right;
+}
+
+#alert p{
+    display: inline-block;
+    margin: 6px 0;
+}
