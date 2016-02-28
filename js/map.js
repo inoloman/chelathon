@@ -123,6 +123,7 @@ function transition(deltaLat, deltaLng, origin, route, step){
 // Función que calcula el tiempo aproximado entre un punto y otro
 function calculateTime(orig, dest, marker_origin, state){
     promotion_ok = false;
+    firebaseRef.push({'order_accepted': false});
     var origen = new google.maps.LatLng(orig);
     var destino = new google.maps.LatLng(dest);
     timesService.route({
