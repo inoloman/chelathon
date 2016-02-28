@@ -9,10 +9,20 @@ firebaseRef.on('value', function(dataSnapshot){
 });
 
 $(document).ready(function(){
-    $('body').click(function(e){
-        console.dir(e);
+    /*$('body').click(function(e){
         if (!e.target.is('#alert')){
             $('#alert').remove();
         }
-    })
+    });*/
+
+    $('#myModal').on('hidden.bs.modal', function (e) {
+        $('#alert').remove();
+    });
 });
+
+function acepta_promo(){
+    firebaseRef.update({'order_accepted': true});
+    firebaseRef.update({'order_canceled': false});
+    $('#myModal').modal('hide');
+    $('.modal-backdrop').remove();
+}

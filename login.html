@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Chelaton</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+  .fadebox {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/chelas.jpg");
+    
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+.overbox {
+
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    z-index:1002;
+    overflow: auto;
+}
+  </style>
+  <script type="text/javascript">
+  function showLightbox() {
+    document.getElementById('over').style.display='block';
+    document.getElementById('fade').style.display='block';
+}
+function hideLightbox() {
+    document.getElementById('over').style.display='none';
+    document.getElementById('fade').style.display='none';
+}
+  </script>
+</head>
+
+<body onload="showLightbox();">
+
+
+<div id="over" class="overbox" >
+
+
+
+<div class="modal-content">
+        <div class="modal-header">
+          <center>
+          
+          </center>
+          <br>
+          
+        </div>
+        <div class="modal-body">
+          <center>
+          
+          <a href="login.html"> <button type="button" class="btn btn-default" data-dismiss="modal">Registar</button></a>
+          </center>
+        </div>
+        
+      </div>
+ 
+
+</div>
+<div id="fade" class="fadebox"></div>  
+
+
+</body>
+</html>
